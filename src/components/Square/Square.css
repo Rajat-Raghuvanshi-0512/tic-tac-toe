@@ -1,0 +1,18 @@
+.square_button {
+	font-size: 3rem;
+	padding: 15px 30px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #4e54c8bc;
+	border-right: 2px solid #4e54c8bc;
+	background: aliceblue;
+	filter: opacity(80%);
+	transition: all 0.4s;
+}
+.square_button:hover {
+	filter: opacity(100%);
+}
+.square_button:last-child {
+	border-right: none;
+}
