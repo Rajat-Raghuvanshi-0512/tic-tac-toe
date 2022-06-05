@@ -6,6 +6,29 @@
 	height: 100vh;
 	flex-direction: column;
 }
-.board_main .board_row:last-child .square_button {
+.board_title {
+	color: aliceblue;
+	filter: drop-shadow(1px 1px 10px #000);
+}
+.board_row {
+	border-bottom: 2px solid #4e54c8bc;
+	display: flex;
+}
+.board_main .board_row:last-child {
 	border-bottom: none;
+}
+.board_button {
+	color: aliceblue;
+	margin-top: 2rem;
+	font-size: 1.1rem;
+	padding: 10px 19px;
+	border-radius: 5px;
+	transition: all 0.5s;
+	cursor: pointer;
+	background-color: #212687bc;
+	border: none;
+}
+.board_button:hover {
+	background-color: #212687;
+	transform: scale(1.1);
 }

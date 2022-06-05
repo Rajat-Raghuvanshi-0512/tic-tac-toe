@@ -1,9 +1,9 @@
 import React from 'react'
 import './Square.css'
 
-const Square = ({ value }) => {
+const Square = ({ value, onClick }) => {
     return (
-        <button className='square_button'>{value}</button>
+        <button className='square_button' onClick={onClick}>{value}</button>
     )
 }
 
