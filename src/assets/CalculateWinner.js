@@ -9,12 +9,14 @@ export const CalculateWinner = (array) => {
         [1, 4, 7],
         [2, 5, 8]
     ]
-    let winner;
+    let winner, winningMove = [];
     conditions.forEach((condition) => {
         if (array[condition[0]] == array[condition[1]] && array[condition[0]] == array[condition[2]]) {
             winner = array[condition[0]];
+            if (winner) winningMove = condition;
             return
         }
     })
-    return winner;
+    console.log(`\nWinner: ${winner}\nWinning Move: ${winningMove}\n`);
+    return { winner, winningMove };
 }

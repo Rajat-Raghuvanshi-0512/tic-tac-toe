@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import { CalculateWinner } from '../../assets/CalculateWinner'
 import Square from '../Square/Square'
 import './Board.css'
-
 const Board = () => {
     const [squares, setSquares] = useState(Array(9).fill(null))
     const [isXnext, setIsXnext] = useState(false);
-    const winnerName = CalculateWinner(squares);
+    const { winner: winnerName, winningMove } = CalculateWinner(squares);
     const handleClick = (index) => {
         if (squares[index] || winnerName) return;
         setSquares(prev => {
@@ -20,10 +19,12 @@ const Board = () => {
         setIsXnext(!isXnext)
     }
     const render = (position) => {
+        const isWinningSquare = winningMove.includes(position)
         return <Square
             value={squares[position]}
-            onClick={() => handleClick(position)} />
-
+            onClick={() => handleClick(position)}
+            isWinningSquare={isWinningSquare}
+        />
     }
     return (
         <div className='board_main'>
